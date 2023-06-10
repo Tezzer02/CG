@@ -1,0 +1,23 @@
+Certainly! Here's a step-by-step explanation of the Bresenham's circle drawing algorithm:
+
+1. Start by defining the center coordinates of the circle `(center_x, center_y)` and its radius.
+
+2. Initialize the starting point of the circle's boundary. Set `x` to 0 and `y` to the radius.
+
+3. Calculate the initial decision parameter `d` using the formula `d = 3 - 2 * radius`.
+
+4. Enter a loop that continues until `x` becomes greater than `y`. This loop iterates over each pixel on the circle's boundary.
+
+5. Within each iteration of the loop, plot points in the eight octants of the circle using symmetry. The octants are determined by adding or subtracting the current values of `x` and `y` to the center coordinates.
+
+6. Update the decision parameter `d` based on the Bresenham's algorithm conditions:
+   - If `d` is less than 0, increment it using `d += 4 * x + 6`.
+   - If `d` is greater than or equal to 0, increment it using `d += 4 * (x - y) + 10` and decrement `y` by 1.
+
+7. Increment `x` by 1 to move to the next pixel along the circle's boundary.
+
+8. Repeat steps 5-7 until the condition `x <= y` is no longer satisfied. At this point, the entire circle has been drawn.
+
+9. The algorithm is complete.
+
+It's important to note that the above algorithm assumes integer coordinates. Additionally, the `plot` function mentioned in the previous code explanation should be replaced with the actual drawing or plotting function suitable for your specific environment or library.
